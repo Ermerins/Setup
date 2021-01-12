@@ -124,6 +124,16 @@ cd ~/tools/
 
 echo "installing subfinder (Don't forget to set API keys in ~/.config/subfinder/config.yaml!"
 GO111MODULE=on go get -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder
+
+echo "installing amass"
+sudo snap install amass
+if [[ ! -d ~/.config/amass ]];then
+cd ~/.config
+mkdir amass
+cd amass
+wget https://raw.githubusercontent.com/OWASP/Amass/master/examples/config.ini
+cd ~/tools
+fi
  
 echo "installing bash_profile aliases" 
 git clone https://github.com/Ermerins/recon_aliases.git
